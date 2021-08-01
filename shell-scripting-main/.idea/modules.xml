@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/shell-scripting-main.iml" filepath="$PROJECT_DIR$/.idea/shell-scripting-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/terraform/terraform.iml" filepath="$PROJECT_DIR$/terraform/terraform.iml" />
     </modules>
   </component>
 </project>
