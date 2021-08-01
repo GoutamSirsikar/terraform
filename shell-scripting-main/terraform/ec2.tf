@@ -41,14 +41,14 @@ resource "aws_ec2_tag" "my-tag" {
   value = element (var.COMPONENTS,count.index)
 }
 
-// terraform {
-//   backend "s3" {
-//     bucket = "mybucket"
-//     key    = "gomsy/mykeytoroboshop"
-//     dynamodb_table = "gomsy2"
-//     region = "us-east-1"
-//   }
-// }
+terraform {
+  backend "s3" {
+    bucket = "mybucket"
+    key    = "gomsy/mykeytoroboshop"
+    dynamodb_table = "gomsy2"
+    region = "us-east-1"
+  }
+}
 provider "aws" {
   region = "us-east-1"
 }
