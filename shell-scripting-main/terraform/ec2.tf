@@ -4,7 +4,7 @@ resource "aws_spot_instance_request" "myresource" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [sg-0980c269147cd7819]
   tags = {
-    Name = "myinistance"
+    Name = "$(aws_spot_instance_request.myresource.count.index -new)"
   }
   }
 
