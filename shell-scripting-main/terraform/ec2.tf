@@ -12,4 +12,8 @@ resource "aws_spot_instance_request" "myresource" {
 
 provider "aws" {
   region = "us-east-1"
+}output "PUBLIC_ID" {
+  value = aws_spot_instance_request.myresource.*.public_ip
 }
+
+
