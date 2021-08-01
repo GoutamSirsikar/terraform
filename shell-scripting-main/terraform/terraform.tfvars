@@ -1,0 +1,1 @@
+COMPONENTS = ["mysql", "redis","payment","frontend","cart","catalogue","rabbitmq","user","shipping","mangodb"]
