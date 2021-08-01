@@ -43,7 +43,7 @@ resource "aws_ec2_tag" "my-tag" {
 
 terraform {
   backend "s3" {
-    bucket = "mybucket"
+    bucket = "gomsy"
     key    = "gomsy/mykeytoroboshop"
     dynamodb_table = "gomsy2"
     region = "us-east-1"
