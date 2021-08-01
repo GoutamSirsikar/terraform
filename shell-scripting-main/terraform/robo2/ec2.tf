@@ -49,7 +49,7 @@ terraform {
   backend "s3" {
     bucket = "gomsy"
     key    = "gomsy/mykeytoroboshop"
-//    dynamodb_table = "gomsy2"
+    dynamodb_table = "gomsy2"
     region = "us-east-1"
   }
 }
