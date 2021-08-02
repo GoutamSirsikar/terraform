@@ -61,24 +61,44 @@ output "PUBLIC_ID" {
   value = aws_spot_instance_request.myresource.*.public_ip
 }
 
-resource "null_resource" "run_shell_script" {
-  count             = length(var.COMPONENTS)
-  provisioner remote-exec {
+resource "null_resource" "run-shell-scripting" {
+  count                     = length(var.COMPONENTS)
+  provisioner "remote-exec" {
     connection {
-      host          = element(aws_spot_instance_request.myresource.*.public_ip,count.index )
-      user          = "centos"
-      password      = "DevOps321"
+      host                  = element(aws_spot_instance_request.myresource.*.public_ip, count.index)
+      user                  = "centos"
+      password              = "DevOps321"
     }
-  inline = [
-   "cd /home/centos",
-    "git clone https://github.com/GoutamSirsikar/Devops.git",
-    "cd shell-scripting-main/roboshop",
-    "sudo make ${element(var.COMPONENTS,count.index)}"
-  ]
 
+    inline = [
+      "cd /home/centos",
+      "git clone https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps57/_git/shell-scripting",
+      "cd shell-scripting/roboshop",
+      "git pull",
+      "sudo make ${element(var.COMPONENTS, count.index)}"
+    ]
   }
-
 }
+
+//resource "null_resource" "run_shell_script" {
+//  count             = length(var.COMPONENTS)
+//  provisioner remote-exec {
+//    connection {
+//      host          = element(aws_spot_instance_request.myresource.*.public_ip,count.index )
+//      user          = "centos"
+//      password      = "DevOps321"
+//    }
+//  inline = [
+//   "cd /home/centos",
+//    "git clone https://github.com/GoutamSirsikar/Devops.git",
+//    "cd shell-scripting-main/roboshop",
+//    "sudo make ${element(var.COMPONENTS,count.index)}"
+//  ]
+//
+//  }
+//
+//}
+
 
 
 
