@@ -1,4 +1,4 @@
-COMPONENTS = ["frontend"]
+COMPONENTS = ["frontend","mysql", "redis","payment","cart","catalogue","rabbitmq","user","shipping","mangodb"]
 
 
-// "mysql", "redis","payment",,"cart","catalogue","rabbitmq","user","shipping","mangodb"
+//
