@@ -61,4 +61,25 @@ output "PUBLIC_ID" {
   value = aws_spot_instance_request.myresource.*.public_ip
 }
 
+resource "null_resource" "run_shell_script" {
+  count             = length(var.COMPONENTS)
+  provisioner "remote-exec" {
+    connection {
+      host          = element(aws_spot_instance_request.myresource.*.public_ip,count.index )
+      user          = "centos"
+      password      = "DevOps321"
+    }
+  command = [
+   "cd /home/centos",
+    "git clone https://github.com/GoutamSirsikar/Devops.git",
+    "cd shell-scripting-main/roboshop",
+    "sudo make ${element(var.COMPONENTS,count.index)}"
+  ]
+
+  }
+
+}
+
+
+
 
