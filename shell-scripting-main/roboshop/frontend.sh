@@ -10,6 +10,9 @@ PRINT "Download Frontend\t"
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG
 STAT_CHECK $?
 
+PRINT "Starting Nginx\t\t"
+systemctl restart nginx  &>>$LOG
+STAT_CHECK $?
 
 PRINT "Remove Old HtDocs\t"
 cd /usr/share/nginx/html &>>$LOG && rm -rf * -R &>>$LOG
