@@ -12,11 +12,11 @@ STAT_CHECK $?
 
 
 PRINT "Remove Old HtDocs\t"
-cd /usr/share/nginx/html &>>$LOG && rm -rf * &>>$LOG
+cd /usr/share/nginx/html &>>$LOG && rm -rf * -R &>>$LOG
 STAT_CHECK $?
 
 PRINT "Extract Frontend Archive"
-unzip /tmp/frontend.zip &>>$LOG && mv frontend-main/* . &>>$LOG && mv static/* . &>>$LOG  && rm -rf frontend-master static &>>$LOG
+unzip -o /tmp/frontend.zip &>>$LOG && mv frontend-main/* . &>>$LOG && mv static/* . &>>$LOG  && rm -rf frontend-master static &>>$LOG
 STAT_CHECK $?
 
 PRINT "Copy RoboShop Config\t"
