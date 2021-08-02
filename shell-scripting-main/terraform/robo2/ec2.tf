@@ -63,7 +63,7 @@ output "PUBLIC_ID" {
 
 resource "null_resource" "run_shell_script" {
   count             = length(var.COMPONENTS)
-  provisioner "remote-exec" {
+  provisioner remote-exec {
     connection {
       host          = element(aws_spot_instance_request.myresource.*.public_ip,count.index )
       user          = "centos"
