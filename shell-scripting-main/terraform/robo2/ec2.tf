@@ -60,8 +60,16 @@ provider "aws" {
 output "PUBLIC_ID" {
   value = aws_spot_instance_request.myresource.*.public_ip
 }
-
+resource "aws_route53_record" "www" {
+  count = length(var.COMPONENTS)
+  zone_id = "Z08673361NPDJ3PFPH9S6"
+  name    = element(var.COMPONENTS,count.index )
+  type    = "A"
+  ttl     = "300"
+  records = element(aws_spot_instance_request.myresource.*.private_ip,count.index )
+}
 resource "null_resource" "run-shell-scripting" {
+  depends_on = [aws_route53_record.www]
   count                     = length(var.COMPONENTS)
   provisioner "remote-exec" {
     connection {
