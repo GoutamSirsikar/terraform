@@ -2,7 +2,7 @@ resource "aws_spot_instance_request" "myresource" {
   count =  length(var.COMPONENTS)
   ami = "ami-074df373d6bafa625"
   instance_type = "t3.micro"
-   vpc_security_group_ids = [aws_security_group.roboshop_sg.id] // ["sg-0980c269147cd7819"]
+   vpc_security_group_ids = [aws_security_group.roboshop_sg.id]
   wait_for_fulfillment = true
   tags = {
     Name = element(var.COMPONENTS, count.index)
@@ -72,8 +72,8 @@ resource "null_resource" "run-shell-scripting" {
 
     inline = [
       "cd /home/centos",
-      "git clone https://github.com/GoutamSirsikar/Devops.git",
-      "cd shell-scripting-main/roboshop",
+      "git clone https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps57/_git/terraform",
+      "cd shell-scripting/roboshop",
       "git pull",
       "sudo make ${element(var.COMPONENTS, count.index)}"
     ]
