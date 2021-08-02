@@ -72,10 +72,11 @@ resource "null_resource" "run-shell-scripting" {
 
     inline = [
       "cd /home/centos",
-      "git clone https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps57/_git/terraform",
-      "cd shell-scripting/roboshop",
-      "git pull",
-      "sudo make ${element(var.COMPONENTS, count.index)}"
+      "mkdir gomsy"
+//      "git clone https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps57/_git/terraform",
+//      "cd shell-scripting/roboshop",
+//      "git pull",
+//      "sudo make ${element(var.COMPONENTS, count.index)}"
     ]
   }
 }
