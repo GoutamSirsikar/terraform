@@ -71,17 +71,17 @@ resource "null_resource" "run-shell-scripting" {
     }
 
     inline = [
-      "cd /home/centos",
-      "git clone https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps57/_git/shell-scripting",
-      "cd shell-scripting/roboshop",
-      "git pull",
-      "sudo make ${element(var.COMPONENTS, count.index)}"
-
-//    inline = [
-//      "git clone https://github.com/GoutamSirsikar/Devops.git",
-//      "cd /home/centos/Devops/shell-scripting-main/roboshop",
+//      "cd /home/centos",
+//      "git clone https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps57/_git/shell-scripting",
+//      "cd shell-scripting/roboshop",
 //      "git pull",
-//     "sudo make ${element(var.COMPONENTS, count.index)}"
+//      "sudo make ${element(var.COMPONENTS, count.index)}"
+
+
+      "git clone https://github.com/GoutamSirsikar/Devops.git",
+      "cd /home/centos/Devops/shell-scripting-main/roboshop",
+      "git pull",
+     "sudo make ${element(var.COMPONENTS, count.index)}"
     ]
   }
 }
