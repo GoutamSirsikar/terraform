@@ -11,7 +11,7 @@ resource "aws_spot_instance_request" "mytest" {
 provider "aws" {
   region = "us-east-1"
 }
-output "PUBLIC_IP" {
+output "PUBLIC_IP_TO_CONNECT_TO_APP" {
   value = aws_spot_instance_request.mytest[0].public_ip
 }
 
