@@ -58,7 +58,7 @@ provider "aws" {
 }
 
 output "PUBLIC_ID" {
-  value = aws_spot_instance_request.myresource.*.public_ip
+  value = "aws_spot_instance_request.myresource.frontend.public_ip"
 }
 resource "aws_route53_record" "www" {
   count = length(var.COMPONENTS)
