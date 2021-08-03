@@ -12,7 +12,7 @@ provider "aws" {
   region = "us-east-1"
 }
 output "PUBLIC_IP" {
-  value = aws_spot_instance_request.mytest.id[0]
+  value = aws_spot_instance_request.mytest.private_ip[0]
 }
 
 variable "COMPO" {}
