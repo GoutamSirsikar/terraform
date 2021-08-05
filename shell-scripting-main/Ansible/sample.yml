@@ -7,8 +7,8 @@
        ansible.builtin.debug:
          msg: hello world
 - name: demo on variable
-     hosts: all
-     tasks:
+  hosts: all
+  tasks:
        name: pull the var
        ansible.builtin.debug:
          msg : "{{URL}}"
