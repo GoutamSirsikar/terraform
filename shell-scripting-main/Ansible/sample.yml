@@ -1,6 +1,6 @@
 - name: samle play 13
   hosts: all
-  var:
+  vars:
    URL: google.com
   tasks:
      - name: print hello
