@@ -11,10 +11,11 @@
   hosts: all
   tasks:
    - name: checks
-     ansible.builtin.debug:
-      msg: "msg = {{URL}}"
       vars:
-      URL: play.google.com
+       URL: play.google.com
+     ansible.builtin.debug:
+      msg: "new = {{URL}}"
+
 
 
 ##- name: Demo on variables
