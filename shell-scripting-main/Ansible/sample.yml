@@ -6,15 +6,14 @@
      - name: print hello
        ansible.builtin.debug:
          msg: "{{URL}}"
-
-- name: variable inside the task
-  hosts: all
-  tasks:
-   - name: checks
-      vars:
-       URL: play.google.com
+     - name: new page
        ansible.builtin.debug:
-        msg: "new = {{URL}}"
+       msg: "{{URL}}"
+       vars:
+        URL: play.google.com
+
+
+
 
 
 
