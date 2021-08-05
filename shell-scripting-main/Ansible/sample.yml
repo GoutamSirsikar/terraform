@@ -1,4 +1,4 @@
-- name: samle play 1
+- name: samle play 13
   hosts: All
   tasks:
      -name: print hello
