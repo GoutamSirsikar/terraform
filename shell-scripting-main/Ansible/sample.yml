@@ -8,15 +8,9 @@
          msg: "{{URL}}"
      - name: new page
        ansible.builtin.debug:
-       msg: "{{URL}}"
+         msg: "{{URL}}"
        vars:
         URL: play.google.com
-
-
-
-
-
-
 ##- name: Demo on variables
 ##  hosts: all
 ##  vars:
