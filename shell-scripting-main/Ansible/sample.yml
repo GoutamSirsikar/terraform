@@ -12,8 +12,8 @@
   tasks:
    - name: checks
      ansible.builtin.debug:
-     msg: "msg = {{URL}}"
-     vars:
+      msg: "msg = {{URL}}"
+      vars:
       URL: play.google.com
 
 
