@@ -1,26 +1,26 @@
-- name: samle play 13
-  hosts: all
-  vars:
-    URL: google.com
-  tasks:
-     - name: print hello
-       ansible.builtin.debug:
-         msg: "{{URL}}"
-     - name: new page
-       ansible.builtin.debug:
-         msg: "{{URL}}"
-       vars:
-        URL: play.google.com
-##- name: Demo on variables
+##- name: samle play 13
 ##  hosts: all
 ##  vars:
-##    URL: play.google.com
+##    URL: google.com
 ##  tasks:
-##    - name: Print a Variable
-##      ansible.builtin.debug:
-##        msg: "URL = {{URL}}"
-##    - name: Print task Variable
-##      ansible.builtin.debug:
-##        msg: "URL = {{URL}}"
-##      vars:
-##        URL: task.google.com
+##     - name: print hello
+##       ansible.builtin.debug:
+##         msg: "{{URL}}"
+##     - name: new page
+##       ansible.builtin.debug:
+##         msg: "{{URL}}"
+##       vars:
+##        URL: play.google.com
+- name: Demo on variables
+  hosts: all
+  vars:
+    URL: play.google.com
+  tasks:
+    - name: Print a Variable
+      ansible.builtin.debug:
+        msg: "URL = {{URL}}"
+    - name: Print task Variable
+      ansible.builtin.debug:
+        msg: "URL = {{URL}}"
+      vars:
+        URL: task.google.com
