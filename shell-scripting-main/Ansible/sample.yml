@@ -1,5 +1,5 @@
 - name: samle play 13
-  hosts: All
+  hosts: all
   tasks:
      - name: print hello
        ansible.builtin.debug:
