@@ -1,7 +1,7 @@
 - name: samle play 13
   hosts: all
   var:
-   URL : google.com
+   URL: google.com
   tasks:
      - name: print hello
        ansible.builtin.debug:
