@@ -7,6 +7,14 @@
        ansible.builtin.debug:
          msg: "{{URL}}"
 
+- name: variable inside the task
+  hosts: all
+  tasks:
+    name: checks
+    ansible.builtin.debug:
+    msg: "msg = {{URL}}"
+    vars:
+      URL: play.google.com
 
 
 ##- name: Demo on variables
