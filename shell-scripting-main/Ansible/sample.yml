@@ -1,6 +1,16 @@
 - name: samle play 13
   hosts: all
+  var:
+   URL : google.com
   tasks:
      - name: print hello
        ansible.builtin.debug:
          msg: hello world
+- name: demo on variable
+     host: all
+     tasks:
+       name: pull the var
+       ansible.builtin.debug:
+         msg : "{{URL}}"
+
+
