@@ -17,7 +17,7 @@
   tasks:
     -  name: print from inv
        ansible.builtin.debug:
-       msg: "{{URL}}"
+        msg: "{{URL}}"
 
 
 
