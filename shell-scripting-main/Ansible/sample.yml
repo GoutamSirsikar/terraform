@@ -12,6 +12,13 @@
        vars:
         URL: play.google.com
 
+- name: print from inventory
+  hosts: all
+  tasks:
+    -  name: print from inv
+       ansible.builtin.debug:
+       msg: "{{URL}}"
+
 
 
 
