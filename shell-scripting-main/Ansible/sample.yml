@@ -13,8 +13,8 @@
    - name: checks
       vars:
        URL: play.google.com
-     ansible.builtin.debug:
-      msg: "new = {{URL}}"
+       ansible.builtin.debug:
+        msg: "new = {{URL}}"
 
 
 
