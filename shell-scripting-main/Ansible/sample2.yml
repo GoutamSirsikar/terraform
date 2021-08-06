@@ -4,5 +4,5 @@
     URL: toto.com
   tasks:
   - name: my url
-        ansible.builtin.debug:
+    ansible.builtin.debug:
           msg: "URL {{URL}}"
