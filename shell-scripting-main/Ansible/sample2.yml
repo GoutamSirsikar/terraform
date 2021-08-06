@@ -19,9 +19,9 @@
 - name: variable from tasks
   hosts: all
   tasks:
-   vars:
-     URL: booboo.com
-  - name: variable fetch from tasks
-    ansible.builtin.debug:
-     msg: "{{URL}}"
+      vars:
+        URL: booboo.com
+    - name: variable fetch from tasks
+      ansible.builtin.debug:
+        msg: "{{URL}}"
 
