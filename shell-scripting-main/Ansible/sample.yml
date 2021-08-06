@@ -26,7 +26,7 @@
   tasks:
     - name: print the vars from file
       ansible.builtin.debug:
-      msg: "{{URL}}"
+        msg: "{{URL}}"
 
 
 
