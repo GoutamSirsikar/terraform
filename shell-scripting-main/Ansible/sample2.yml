@@ -6,3 +6,22 @@
   - name: my url
     ansible.builtin.debug:
           msg: "URL {{URL}}"
+
+-name: variable using file
+ hosts: all
+ vars_files:
+   vars.yml
+ tasks:
+   -name: variable using files
+    ansible.builtin.debug:
+      msg: "{{URL}}"
+
+-name: variable from tasks
+ hosts: all
+ tasks:
+   vars:
+     URL: booboo.com
+  -name: variable fetch from tasks
+   ansible.builtin.debug:
+     msg: "{{URL}}"
+
