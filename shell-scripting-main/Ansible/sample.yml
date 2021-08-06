@@ -28,6 +28,16 @@
       ansible.builtin.debug:
         msg: "{{URL}}"
 
+- name: knowing about facts
+  hosts: all
+  tasks:
+    -  name: get facts
+       ansible.builtin.debug:
+       msg: "hostname = {{ansible_fqdn}}"
+
+
+
+
 
 
 
