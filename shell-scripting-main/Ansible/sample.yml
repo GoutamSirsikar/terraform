@@ -42,10 +42,13 @@
     - name: store uptime register
       ansible.builtin.shell: uptime
       register: out
+    -name: set a variable
+     ansible.builtin.set_fact:
+       UPTIME: "{{out.stdout}}"
 
     - name: display registored output
       ansible.builtin.debug:
-        msg: "{{out.changed}}"
+        msg: "{{ UPTIME }}"
 
 
 
