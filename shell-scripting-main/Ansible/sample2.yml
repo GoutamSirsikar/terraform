@@ -12,8 +12,8 @@
  vars_files:
    vars.yml
  tasks:
-   -name: variable using files
-    ansible.builtin.debug:
+   - name: variable using files
+     ansible.builtin.debug:
       msg: "{{URL}}"
 
 -name: variable from tasks
