@@ -36,6 +36,20 @@
          msg: "hostname = {{ansible_fqdn}}"
 
 
+- name: variable in register
+  hosts: all
+  tasks:
+    - name: store uptime register
+      ansible.builtin.shell: uptime
+        register: out
+
+    - name: display registored output
+      ansible.builtin.debug:
+        msg: "{{out}}"
+
+
+
+
 
 
 
