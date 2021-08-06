@@ -45,7 +45,7 @@
 
     - name: display registored output
       ansible.builtin.debug:
-        msg: "{{out.stdout}}"
+        msg: "{{out.changed}}"
 
 
 
