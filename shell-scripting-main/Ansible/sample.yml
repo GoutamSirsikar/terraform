@@ -19,6 +19,16 @@
        ansible.builtin.debug:
         msg: "{{URL}}"
 
+- name: var from file
+  hosts: all
+  vars_files:
+    vars.yml
+  tasks:
+    - name: print the vars from file
+      ansible.builtin.debug:
+      msg: "{{URL}}"
+
+
 
 
 
