@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Terraform initialize') {
             steps {
-               sh 'cd robo2 ; terraform initialize'
+               sh 'cd robo2 ; terraform init'
             }
         }
         stage('Terraform apply config') {
