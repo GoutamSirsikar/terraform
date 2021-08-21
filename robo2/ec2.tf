@@ -86,8 +86,8 @@ resource "null_resource" "run-shell-scripting" {
 //      "sudo make ${element(var.COMPONENTS, count.index)}"
 
 
-      "git clone https://github.com/GoutamSirsikar/Devops.git",
-      "cd /home/centos/Devops/shell-scripting-main/roboshop",
+      "git clone https://github.com/GoutamSirsikar/terraform.git",
+      "cd /home/centos/terraform/shell-scripting-main/roboshop",
       "git pull",
      "sudo make ${element(var.COMPONENTS, count.index)}"
     ]
